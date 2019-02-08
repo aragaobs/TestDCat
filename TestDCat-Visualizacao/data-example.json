@@ -1,0 +1,743 @@
+{
+	"tree" : {
+		"nodeName" : "TestDCat",
+		"name" : "Catalog of Test Debt Subtypes and Management Activities",
+		"type" : "type3",
+		"code" : "",
+		"label" : "",
+		"version" : "",
+		"link" : {
+				"name" : "",
+				"nodeName" : "",
+				"direction" : ""
+			},
+		"children" : [{
+				"nodeName" : "Identification",
+				"name" : "",
+				"type" : "type1",
+				"code" : "",
+				"label" : "",
+				"version" : "",
+				"link" : {
+						"name" : "",
+						"nodeName" : "",
+						"direction" : ""
+					},
+				"children" : [{
+						"nodeName" : "Low Code Coverage",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "Code analysis - investigate code to analyze code coverage. Usually some tool is used for this analysis (e.g., eclema)",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "Test  Planning: Definition of the coverage targets. Test  Design: Registration of test coverage. Test Execution: Feedback about the coverage to test monitoring. Test  Monitoring: Collection and analysis of measurements.",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					},{
+						"nodeName" : "Deferring testing",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					},{
+						"nodeName" : "Lack of tests",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					},{
+						"nodeName" : "Lack of tests automation",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					},{
+						"nodeName" : "Defects not found in tests",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					},{
+						"nodeName" : "Expensive tests",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					},{
+						"nodeName" : "Test effort estimation errors",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					},{
+						"nodeName" : "Inadequate equipment",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					},{
+						"nodeName" : "Inadequate allocation",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					}
+				]
+			}, {
+				"nodeName" : "Measurement",
+				"name" : "",
+				"type" : "type1",
+				"code" : "",
+				"label" : "",
+				"version" : "",
+				"link" : {
+						"name" : "",
+						"nodeName" : "",
+						"direction" : ""
+					},
+				"children" : [{
+						"nodeName" : "All test debt subtypes",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					}
+				]
+			}, {
+				"nodeName" : "Prioritization",
+				"name" : "",
+				"type" : "type1",
+				"code" : "",
+				"label" : "",
+				"version" : "",
+				"link" : {
+						"name" : "",
+						"nodeName" : "",
+						"direction" : ""
+					},
+				"children" : [{
+						"nodeName" : "All test debt subtypes",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					}
+				]
+			}, {
+				"nodeName" : "Prevention",
+				"name" : "",
+				"type" : "type1",
+				"code" : "",
+				"label" : "",
+				"version" : "",
+				"link" : {
+						"name" : "",
+						"nodeName" : "",
+						"direction" : ""
+					},
+				"children" : [{
+						"nodeName" : "All test debt subtypes",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					}
+				]
+			}, {
+				"nodeName" : "Monitoring",
+				"name" : "",
+				"type" : "type1",
+				"code" : "",
+				"label" : "",
+				"version" : "",
+				"link" : {
+						"name" : "",
+						"nodeName" : "",
+						"direction" : ""
+					},
+				"children" : [{
+						"nodeName" : "All test debt subtypes",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					}
+				]
+			}, {
+				"nodeName" : "Repayment",
+				"name" : "",
+				"type" : "type1",
+				"code" : "",
+				"label" : "",
+				"version" : "",
+				"link" : {
+						"name" : "",
+						"nodeName" : "",
+						"direction" : ""
+					},
+				"children" : []
+			}, {
+				"nodeName" : "Documentation",
+				"name" : "",
+				"type" : "type1",
+				"code" : "",
+				"label" : "",
+				"version" : "",
+				"link" : {
+						"name" : "",
+						"nodeName" : "",
+						"direction" : ""
+					},
+				"children" : [{
+						"nodeName" : "All test debt subtypes",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					}
+				]
+			}, {
+				"nodeName" : "Communication",
+				"name" : "",
+				"type" : "type1",
+				"code" : "",
+				"label" : "",
+				"version" : "",
+				"link" : {
+						"name" : "",
+						"nodeName" : "",
+						"direction" : ""
+					},
+				"children" : [{
+						"nodeName" : "All test debt subtypes",
+						"name" : "",
+						"type" : "type1",
+						"code" : "",
+						"label" : "",
+						"version" : "",
+						"link" : {
+								"name" : "",
+								"nodeName" : "",
+								"direction" : ""
+							},
+						"children" : [{
+								"nodeName" : "Approaches",
+								"name" : "",
+								"type" : "type2",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							},
+							{
+								"nodeName" : "Test Process",
+								"name" : "",
+								"type" : "type4",
+								"code" : "",
+								"label" : "",
+								"version" : "",
+								"link" : {
+										"name" : "",
+										"nodeName" : "",
+										"direction" : ""
+									},
+								"children" : []
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}
