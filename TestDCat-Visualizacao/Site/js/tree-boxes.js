@@ -28,11 +28,12 @@ function treeBoxes(urlService, jsonData)
 {
 	var urlService_ = '';
 	
-	var blue = '#337ab7',
-		green = '#5cb85c',
-		yellow = '#f0ad4e',
+	var blue = '#1F2070',
+		green = '#35520E',
+		grey = '#4E516E',
 		blueText = '#4ab1eb',
-		purple = '#9467bd';
+		coral = '#f0ad4e',
+		purple = '#460E52';
 
 	var margin = {
 					top : 0,
@@ -105,9 +106,11 @@ function treeBoxes(urlService, jsonData)
 				if (node.type == 'type2')
 					node.color = green;
 				if (node.type == 'type3')
-					node.color = yellow;
+					node.color = grey;
 				if (node.type == 'type4')
 					node.color = purple;
+				if (node.type == 'type5')
+					node.color = coral;
 				});
 			});
 /*		height = maxTreeWidth * (rectNode.height + 20) + tooltip.height + 20 - margin.right - margin.left;
