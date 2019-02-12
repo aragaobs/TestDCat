@@ -1,14 +1,14 @@
 {
 	"tree" : {
 		"nodeName" : "TestDCat",
-		"type" : "type3",
+		"type" : "type5",
 		"code" : "",
 		"link" : {
 				"direction" : ""
 			},
 		"children" : [{
 				"nodeName" : "Identification",
-				"type" : "type1",
+				"type" : "type3",
 				"code" : "",
 				"link" : {
 						"direction" : ""
@@ -23,7 +23,7 @@
 						"children" : [{
 								"nodeName" : "Approaches",
 								"type" : "type2",
-								"code" : "<b>Code analysis - </b> investigate code to analyze code coverage. Usually some tool is used for this analysis (e.g., eclema).",
+								"code" : "<b>Code analysis - </b> investigate code to analyze code coverage. Usually some tool is used for this analysis (e.g., eclema).           ",
 								"link" : {
 										"direction" : ""
 									},
@@ -251,7 +251,7 @@
 				]
 			}, {
 				"nodeName" : "Measurement",
-				"type" : "type1",
+				"type" : "type3",
 				"code" : "",
 				"link" : {
 						"direction" : ""
@@ -286,7 +286,7 @@
 				]
 			}, {
 				"nodeName" : "Prioritization",
-				"type" : "type1",
+				"type" : "type3",
 				"code" : "",
 				"link" : {
 						"direction" : ""
@@ -321,7 +321,7 @@
 				]
 			}, {
 				"nodeName" : "Communication",
-				"type" : "type1",
+				"type" : "type3",
 				"code" : "",
 				"link" : {
 						"direction" : ""
@@ -356,7 +356,7 @@
 				]
 			}, {
 				"nodeName" : "Monitoring",
-				"type" : "type1",
+				"type" : "type3",
 				"code" : "",
 				"link" : {
 						"direction" : ""
@@ -391,7 +391,7 @@
 				]
 			}, {
 				"nodeName" : "Repayment",
-				"type" : "type1",
+				"type" : "type3",
 				"code" : "",
 				"link" : {
 						"direction" : ""
@@ -634,7 +634,7 @@
 				]
 			}, {
 				"nodeName" : "Documentation",
-				"type" : "type1",
+				"type" : "type3",
 				"code" : "",
 				"link" : {
 						"direction" : ""
@@ -669,7 +669,7 @@
 				]
 			}, {
 				"nodeName" : "Prevention",
-				"type" : "type1",
+				"type" : "type3",
 				"code" : "",
 				"link" : {
 						"direction" : ""
