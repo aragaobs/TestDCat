@@ -28,12 +28,12 @@ function treeBoxes(urlService, jsonData)
 {
 	var urlService_ = '';
 	
-	var blue = '#1F2070',
-		green = '#35520E',
-		grey = '#4E516E',
+	var approaches = '#bfe4e5',
+		subType = '#99c7c8',
+		tdActivity = '#7b9fa1',
 		blueText = '#4ab1eb',
-		coral = '#f0ad4e',
-		purple = '#460E52';
+		coral = '#ef8189',
+		testProcess = '#f1faee';
 
 	var margin = {
 					top : 0,
@@ -102,13 +102,13 @@ function treeBoxes(urlService, jsonData)
 			maxDepth++;
 			currentLevel.forEach(function(node) {
 				if (node.type == 'type1')
-					node.color = blue;
+					node.color = subType;
 				if (node.type == 'type2')
-					node.color = green;
+					node.color = approaches;
 				if (node.type == 'type3')
-					node.color = grey;
+					node.color = tdActivity;
 				if (node.type == 'type4')
-					node.color = purple;
+					node.color = testProcess;
 				if (node.type == 'type5')
 					node.color = coral;
 				});
