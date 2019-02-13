@@ -117,7 +117,7 @@ function treeBoxes(urlService, jsonData)
 		width = maxDepth * (rectNode.width * 1.5) + tooltip.width / 2 - margin.top - margin.bottom;*/
 	
 		height = maxTreeWidth * (rectNode.height) - margin.right - margin.left;
-		width = maxDepth * (rectNode.width * 6) / 2 - margin.top - margin.bottom;
+		width = maxDepth * (rectNode.width * 7) / 2 - margin.top - margin.bottom;
 
 		/*width = 1280 - margin.left - margin.right;
     	height = 600 - margin.top - margin.bottom;*/
@@ -182,7 +182,7 @@ function treeBoxes(urlService, jsonData)
 	{
 		// Compute the new tree layout
 		var nodes = tree.nodes(root).reverse();
-			links = tree.links(nodes);
+		var links = tree.links(nodes);
 	
 		// Check if two nodes are in collision on the ordinates axe and move them
 		breadthFirstTraversal(tree.nodes(root), collision);
