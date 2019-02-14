@@ -49,6 +49,9 @@
         <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="#catalog">Catalog</a>
         </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#map">TestDCat</a>
+        </li>
       </ul>
     </nav>
 
@@ -64,15 +67,13 @@
       <div class="overlay"></div>
     </header>
 
-    <div>
-
     <!-- Visão Geral -->
     <section class="content-section bg-light" id="about">
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-10 mx-auto">
-            <h2>TestDCat structure</h2>
-            <p class="lead mb-5">The TestDCat is a test debt catalog with subtypes of test debts and technical debt management activities. This catalog was populated based on semi-structured interviews conducted with practitioners who perform test activities in eight projects from industry. With our catalog, we intend to help the management of test debts during the execution of software testing processes.</p>
+            <h2>About TestDCat</h2>
+            <p class="lead mb-5">The TestDCat catalog is formed by test debt subtypes and, for each of them, a set of TD management activities is associated. Within each of these activities, there is information about "Approaches" and "Points of attention in the test process". This catalog was populated based on semi-structured interviews conducted with practitioners who perform test activities in eight projects from industry. With our catalog, we intend to help the management of test debts during the execution of software testing processes.</p>
 			 <br><br>  
             <a class="btn btn-dark btn-xl js-scroll-trigger" href="#catalog">Catalog</a>
           </div>
@@ -87,39 +88,35 @@
           <h3 class="text-secondary mb-0"></h3>
           <h2 class="mb-5">How to use the TestDCat</h2>
 		     <p class="lead mb-5" style="text-align:justify; text-justify: inter-word;" >
-                   The TestDCat catalog is formed by test debt subtypes and, for each of them, a set of TD management activities is associated. Within each of these activities, there is information about "Approaches" and "Points of attention in the test process". 
-                   <img src="img/legenda_catalogo.png" alt="some text" width="auto" height="auto">
+                   TestDCat follows a mind map structure. The figure below shows an example of how to use the catalog to help in the test debt management. 
+                   <br/> <br/>
+                   <img src="img/how_to_use.jpg" alt="some text" width="auto" height="auto">
              </p>	
     </section>
 
     <!-- Mapa -->
-    <section class="content-section bg-light" id="map" style="width:auto;height:900px;>
-      <div class="container text-center my-auto">
+    <section class="content-section bg-light" id="map" style="width:auto;height:1100px;">
+      <div class="container text-center">
         <div class="row">
-          <div id="example" style="width:auto;height:auto;"><ct-visualization id="tree-container"></ct-visualization> </div>
+          <div class="col-lg-10 mx-auto">
+            <h2>TestDCat</h2>
+               <div id="example" style="width:auto;height:auto;"><ct-visualization id="tree-container"></ct-visualization> </div>  
+          </div>
         </div>
       </div>
     </section>
-
-	  </div>
-
     
     <!-- Footer--> 
     <footer class="footer text-center">
       <div class="container">
         <ul class="list-inline mb-5">
           <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white mr-3" href="#">
+            <a class="social-link rounded-circle text-white mr-3" href="https://www.facebook.com/profile.php?id=100015922052390">
               <i class="icon-social-facebook"></i>
             </a>
           </li>
           <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white mr-3" href="#">
-              <i class="icon-social-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white" href="#">
+            <a class="social-link rounded-circle text-white" href="https://github.com/aragaobs/TestDCat">
               <i class="icon-social-github"></i>
             </a>
           </li>
