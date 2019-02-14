@@ -113,11 +113,9 @@ function treeBoxes(urlService, jsonData)
 					node.color = coral;
 				});
 			});
-/*		height = maxTreeWidth * (rectNode.height + 20) + tooltip.height + 20 - margin.right - margin.left;
-		width = maxDepth * (rectNode.width * 1.5) + tooltip.width / 2 - margin.top - margin.bottom;*/
 	
-		height = maxTreeWidth * (rectNode.height) - margin.right - margin.left;
-		width = maxDepth * (rectNode.width * 7) / 2 - margin.top - margin.bottom;
+		height = maxTreeWidth * (rectNode.height * 1.5) - margin.right - margin.left;
+		width = maxDepth * (rectNode.width * 2.5) - margin.top - margin.bottom;
 
 		/*width = 1280 - margin.left - margin.right;
     	height = 600 - margin.top - margin.bottom;*/
