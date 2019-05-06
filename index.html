@@ -5,17 +5,18 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="TestDCat: Catalog of Test Debt Subtypes and Management Activities">
+    <meta name="author" content="Bruno Saboia">
 
 	<link rel="stylesheet" href="css/tree-boxes.css">
     <link rel="stylesheet" href="css/styles.css">  
-    <script src="https://d3js.org/d3.v3.min.js" type="text/javascript"></script>
-    <script src="js/tree-boxes.js" charset="utf-8"></script>  
     <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="js/doT.js" type="text/javascript"></script>
+    <script src="js/templates/table.js" type="text/javascript"></script>
+    <script src="js/templates/card.js" type="text/javascript"></script>
+    <script src="js/catalog.js" type="text/javascript"></script>
 
-
-    <title>TestDCat</title>
+    <title>TestDCat v2</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,6 +29,8 @@
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.min.css" rel="stylesheet">
 
+    <!-- Catalog: get data from Google Spreadsheets -->
+    <script src="https://spreadsheets.google.com/feeds/cells/1riiMiV0HPUPQ1Xe8FLAz0fkAlKglZJnh2bj0E7DyDZ8/2/public/values?alt=json-in-script&callback=doData"></script>
   </head>
 
   <body id="page-top">
@@ -62,7 +65,8 @@
         <h3 class="mb-5">
           <em>Catalog of Test Debt Subtypes and Management Activities</em>
         </h3>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">About</a>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#map" style="width: 140px;">Catalog</a>
+        <a class="btn btn-light btn-xl js-scroll-trigger" href="#about" style="width: 140px;">About</a>
       </div>
       <div class="overlay"></div>
     </header>
@@ -89,7 +93,7 @@
           <h2 class="mb-5">How to use the TestDCat</h2>
 		     <p class="lead mb-5" style="text-align:justify; text-justify: inter-word;" >
                    TestDCat follows a mind map structure. The figure below shows an example of how to use the catalog to help in the test debt management. 
-                   <br/> <br/>
+                   <br/><br/>
                    <img src="img/how_to_use.jpg" alt="some text" width="auto" height="auto">
              </p>
              <br><br>  
@@ -97,13 +101,36 @@
     </section>
 
     <!-- Mapa -->
-    <section class="content-section bg-light" id="map" style="width:auto;height:1100px;">
+    <section class="content-section" id="map" style="width:auto;">
       <div class="container text-center">
         <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h2>TestDCat</h2>
-               <div id="example" style="width:auto;height:auto;"><ct-visualization id="tree-container"></ct-visualization> </div>  
-          </div>
+          <div class="col-lg-12 mx-auto">
+            <div class="content-section-heading">
+                <h2>TestDCat</h2>
+                <h3 class="mb-5">Catalog of Test Debt Subtypes and Management Activities</h3>
+            </div>
+            
+            <div id="example" style="width:auto;height:auto;" class="text-left">
+                <ul class="nav nav-justified nav-pills" id="myTab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="mtd01-tab" data-toggle="tab" href="#mtd01" role="tab" aria-controls="mtd01" aria-selected="true">Identificação de DTs</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="mtd02-tab" data-toggle="tab" href="#mtd02" role="tab" aria-controls="mtd02" aria-selected="false">Adiamento de testes</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="mtd01" role="tabpanel" aria-labelledby="mtd01-tab">
+                        <div class="accordion" id="accordionCatalog_mtd01">
+                        
+                        </div>    
+                    </div>
+                    <div class="tab-pane fade" id="mtd02" role="tabpanel" aria-labelledby="mtd02-tab">
+                        
+                    </div>
+                  </div>    
+            </div>
+            </div>
         </div>
       </div>
     </section>
@@ -141,14 +168,6 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/stylish-portfolio.min.js"></script>
-
-    <!-- Catalog -->
-    <script>
-            d3.json("data.json", function(error, json) {
-                treeBoxes('', json.tree);
-            });
-    </script>
-
   </body>
 
 </html>
