@@ -1,310 +1,154 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
-<style>
+<html lang="en">
 
-.node circle {
-  fill: #fff;
-  stroke: steelblue;
-  stroke-width: 3px;
-}
+  <head>
 
-.node text {
-  font: 12px sans-serif;
-}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-.link {
-  fill: none;
-  stroke: #ccc;
-  stroke-width: 2px;
-}
-
-</style>
-
-<body>
-
-<!-- load the d3.js library -->	
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script>
-
-var treeData =
-  {
-    "name": "TestDCat",
-    "children": [
-      { 
-        "name": "Approaches",
-        "children": [
-          { "name": "Identification",
-		  	"children": [
-          	{ "name": "Low code coverage" },
-          	{ "name": "Deferring testing" },
-          	{ "name": "Lack of tests" },
-          	{ "name": "Lack of tests automation" },
-          	{ "name": "Defects not found in tests" },
-          	{ "name": "Expensive tests" },
-         	{ "name": "Test effort estimation errors" },
-          	{ "name": "Inadequate equipment" },
-			{ "name": "Inadequate allocation." }
-        	]
-		  },
-          { "name": "Measurement",
-		  	"children": [
-          	{ "name": "All test debt subtypes"}
-			]
-		  },
-          { "name": "Prioritization",
-		  	"children": [
-          	{ "name": "All test debt subtypes"}
-			]
-		  },
-          { "name": "Prevention"},
-          { "name": "Monitoring",
-		  	"children": [
-          	{ "name": "All test debt subtypes"}
-			] },
-          { "name": "Repayment",
-		  	"children": [
-          	{ "name": "All test debt subtypes"}
-			] },
-          { "name": "Documentation",
-		  	"children": [
-          	{ "name": "All test debt subtypes"}
-			] },
-          { "name": "Communication",
-		  	"children": [
-          	{ "name": "All test debt subtypes"}
-			] }
-        ]
-      },
-	  { 
-        "name": "Test process",
-        "children": [
-          { "name": "Identification",
-		  	"children": [
-          	{ "name": "Low code coverage" },
-          	{ "name": "Deferring testing" },
-          	{ "name": "Lack of tests" },
-          	{ "name": "Lack of tests automation" },
-          	{ "name": "Defects not found in tests" },
-          	{ "name": "Expensive tests" },
-         	{ "name": "Test effort estimation errors" },
-          	{ "name": "Inadequate equipment" },
-			{ "name": "Inadequate allocation." }
-        	]
-		  },
-          { "name": "Measurement",
-		  	"children": [
-          	{ "name": "All test debt subtypes"}
-			]
-		  },
-          { "name": "Prioritization",
-		  	"children": [
-          	{ "name": "All test debt subtypes"}
-			]
-		  },
-          { "name": "Prevention"},
-          { "name": "Monitoring",
-		  	"children": [
-          	{ "name": "All test debt subtypes"}
-			] },
-          { "name": "Repayment",
-		  	"children": [
-          	{ "name": "All test debt subtypes"}
-			] },
-          { "name": "Documentation",
-		  	"children": [
-          	{ "name": "All test debt subtypes"}
-			] },
-          { "name": "Communication",
-		  	"children": [
-          	{ "name": "All test debt subtypes"}
-			] }
-        ]
-      },	
-	  { "name": "Good Practices" }
-    ]
-  };
-
-// Set the dimensions and margins of the diagram
-var margin = {top: 20, right: 90, bottom: 30, left: 90},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
-
-// append the svg object to the body of the page
-// appends a 'group' element to 'svg'
-// moves the 'group' element to the top left margin
-var svg = d3.select("body").append("svg")
-    .attr("width", width + margin.right + margin.left)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate("
-          + margin.left + "," + margin.top + ")");
-
-var i = 0,
-    duration = 750,
-    root;
-
-// declares a tree layout and assigns the size
-var treemap = d3.tree().size([height, width]);
-
-// Assigns parent, children, height, depth
-root = d3.hierarchy(treeData, function(d) { return d.children; });
-root.x0 = height / 2;
-root.y0 = 0;
-
-// Collapse after the second level
-root.children.forEach(collapse);
-
-update(root);
-
-// Collapse the node and all it's children
-function collapse(d) {
-  if(d.children) {
-    d._children = d.children
-    d._children.forEach(collapse)
-    d.children = null
-  }
-}
-
-function update(source) {
-
-  // Assigns the x and y position for the nodes
-  var treeData = treemap(root);
-
-  // Compute the new tree layout.
-  var nodes = treeData.descendants(),
-      links = treeData.descendants().slice(1);
-
-  // Normalize for fixed-depth.
-  nodes.forEach(function(d){ d.y = d.depth * 180});
-
-  // ****************** Nodes section ***************************
-
-  // Update the nodes...
-  var node = svg.selectAll('g.node')
-      .data(nodes, function(d) {return d.id || (d.id = ++i); });
-
-  // Enter any new modes at the parent's previous position.
-  var nodeEnter = node.enter().append('g')
-      .attr('class', 'node')
-      .attr("transform", function(d) {
-        return "translate(" + source.y0 + "," + source.x0 + ")";
-    })
-    .on('click', click);
-
-  // Add Circle for the nodes
-  nodeEnter.append('circle')
-      .attr('class', 'node')
-      .attr('r', 1e-6)
-      .style("fill", function(d) {
-          return d._children ? "lightsteelblue" : "#fff";
-      });
-
-  // Add labels for the nodes
-  nodeEnter.append('text')
-      .attr("dy", ".35em")
-      .attr("x", function(d) {
-          return d.children || d._children ? -13 : 13;
-      })
-      .attr("text-anchor", function(d) {
-          return d.children || d._children ? "end" : "start";
-      })
-      .text(function(d) { return d.data.name; });
-
-  // UPDATE
-  var nodeUpdate = nodeEnter.merge(node);
-
-  // Transition to the proper position for the node
-  nodeUpdate.transition()
-    .duration(duration)
-    .attr("transform", function(d) { 
-        return "translate(" + d.y + "," + d.x + ")";
-     });
-
-  // Update the node attributes and style
-  nodeUpdate.select('circle.node')
-    .attr('r', 10)
-    .style("fill", function(d) {
-        return d._children ? "lightsteelblue" : "#fff";
-    })
-    .attr('cursor', 'pointer');
+	<link rel="stylesheet" href="css/tree-boxes.css">
+    <link rel="stylesheet" href="css/styles.css">  
+    <script src="https://d3js.org/d3.v3.min.js" type="text/javascript"></script>
+    <script src="js/tree-boxes.js" charset="utf-8"></script>  
+    <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
 
-  // Remove any exiting nodes
-  var nodeExit = node.exit().transition()
-      .duration(duration)
-      .attr("transform", function(d) {
-          return "translate(" + source.y + "," + source.x + ")";
-      })
-      .remove();
+    <title>TestDCat</title>
 
-  // On exit reduce the node circles size to 0
-  nodeExit.select('circle')
-    .attr('r', 1e-6);
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  // On exit reduce the opacity of text labels
-  nodeExit.select('text')
-    .style('fill-opacity', 1e-6);
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
-  // ****************** links section ***************************
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet">
 
-  // Update the links...
-  var link = svg.selectAll('path.link')
-      .data(links, function(d) { return d.id; });
+  </head>
 
-  // Enter any new links at the parent's previous position.
-  var linkEnter = link.enter().insert('path', "g")
-      .attr("class", "link")
-      .attr('d', function(d){
-        var o = {x: source.x0, y: source.y0}
-        return diagonal(o, o)
-      });
+  <body id="page-top">
+    <!-- Navigation -->
+    <a class="menu-toggle rounded" href="#">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a class="js-scroll-trigger" href="#page-top">TestDCat</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#page-top">Home</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#catalog">Catalog</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#map">TestDCat</a>
+        </li>
+      </ul>
+    </nav>
 
-  // UPDATE
-  var linkUpdate = linkEnter.merge(link);
+    <!-- Header -->
+    <header class="masthead d-flex">
+      <div class="container text-center my-auto">
+        <h1 class="mb-1">TestDCat</h1>
+        <h3 class="mb-5">
+          <em>Catalog of Test Debt Subtypes and Management Activities</em>
+        </h3>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">About</a>
+      </div>
+      <div class="overlay"></div>
+    </header>
 
-  // Transition back to the parent element position
-  linkUpdate.transition()
-      .duration(duration)
-      .attr('d', function(d){ return diagonal(d, d.parent) });
+    <!-- Visão Geral -->
+    <section class="content-section bg-light" id="about">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h2>About TestDCat</h2>
+            <p class="lead mb-5">The TestDCat catalog is formed by test debt subtypes and, for each of them, a set of TD management activities is associated. Within each of these activities, there is information about "Approaches" and "Points of attention in the test process". This catalog was populated based on semi-structured interviews conducted with practitioners who perform test activities in eight projects from industry. With our catalog, we intend to help the management of test debts during the execution of software testing processes.</p>
+			 <br><br>  
+            <a class="btn btn-dark btn-xl js-scroll-trigger" href="#catalog">Catalog</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  // Remove any exiting links
-  var linkExit = link.exit().transition()
-      .duration(duration)
-      .attr('d', function(d) {
-        var o = {x: source.x, y: source.y}
-        return diagonal(o, o)
-      })
-      .remove();
+    <!-- Catalog -->
+	  <section class="content-section bg-primary text-white text-center" id="catalog">
+      <div class="container">
+        <div class="content-section-heading">
+          <h3 class="text-secondary mb-0"></h3>
+          <h2 class="mb-5">How to use the TestDCat</h2>
+		     <p class="lead mb-5" style="text-align:justify; text-justify: inter-word;" >
+                   TestDCat follows a mind map structure. The figure below shows an example of how to use the catalog to help in the test debt management. 
+                   <br/> <br/>
+                   <img src="img/how_to_use.jpg" alt="some text" width="auto" height="auto">
+             </p>
+             <br><br>  
+            <a class="btn btn-dark btn-xl js-scroll-trigger" href="#map">TestDCat</a>	
+    </section>
 
-  // Store the old positions for transition.
-  nodes.forEach(function(d){
-    d.x0 = d.x;
-    d.y0 = d.y;
-  });
+    <!-- Mapa -->
+    <section class="content-section bg-light" id="map" style="width:auto;height:1100px;">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h2>TestDCat</h2>
+               <div id="example" style="width:auto;height:auto;"><ct-visualization id="tree-container"></ct-visualization> </div>  
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Footer--> 
+    <footer class="footer text-center">
+      <div class="container">
+        <ul class="list-inline mb-5">
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white mr-3" href="https://www.facebook.com/profile.php?id=100015922052390">
+              <i class="icon-social-facebook"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white" href="https://github.com/aragaobs/TestDCat">
+              <i class="icon-social-github"></i>
+            </a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-0">Copyright &copy; TestDCat</p>
+      </div>
+    </footer>
 
-  // Creates a curved (diagonal) path from parent to the child nodes
-  function diagonal(s, d) {
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
 
-    path = `M ${s.y} ${s.x}
-            C ${(s.y + d.y) / 2} ${s.x},
-              ${(s.y + d.y) / 2} ${d.x},
-              ${d.y} ${d.x}`
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    return path
-  }
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  // Toggle children on click.
-  function click(d) {
-    if (d.children) {
-        d._children = d.children;
-        d.children = null;
-      } else {
-        d.children = d._children;
-        d._children = null;
-      }
-    update(d);
-  }
-}
+    <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.min.js"></script>
 
-</script>
-</body>
+    <!-- Catalog -->
+    <script>
+            d3.json("data.json", function(error, json) {
+                treeBoxes('', json.tree);
+            });
+    </script>
+
+  </body>
+
+</html>
